@@ -5,9 +5,13 @@ import posts from "./data/post.json";
 
 function App() {
   return (
-    <>      
-      <Container><h2>Hello!</h2></Container>
-      <PostList posts = {posts}/>
+    <>
+      <Container>
+        <h2>Hello!</h2>
+      </Container>
+      <Container>
+        <PostList posts={posts} />
+      </Container>
     </>
   );
 }

@@ -15,7 +15,7 @@ export class AccordionItem extends Component {
         <div className="accordion">
           <div className="accordion-item">
             <p
-              className={`title ${this.state.isOpen && "is-expanded"}`}
+              className={`title ${this.state.isOpen ? "is-expanded" : ""}`}
               onClick={this.handleToggleAccordion}
             >
               First Question

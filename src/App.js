@@ -7,15 +7,17 @@ import posts from "./data/post.json";
 import { AccordionItem } from "./components/AccordionItem/AccordionItems.jsx";
 import { FAQ } from "./components/FAQ/FAQ";
 import { Boys } from "./components/Boys";
+import { GoodList } from "./components/GoodsList/GoodsList";
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Container>
-        <AccordionItem />
-        <FAQ />
-        <Boys />
+        {/* <AccordionItem />
+        <FAQ /> */}
+        {/* <Boys /> */}
+        <GoodList />
       </Container>
     </>
   );

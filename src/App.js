@@ -8,6 +8,7 @@ import { AccordionItem } from "./components/AccordionItem/AccordionItems.jsx";
 import { FAQ } from "./components/FAQ/FAQ";
 import { Boys } from "./components/Boys";
 import { GoodList } from "./components/GoodsList/GoodsList";
+import { FormReg } from "./components/FormReg/FormReg";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
         {/* <AccordionItem />
         <FAQ /> */}
         {/* <Boys /> */}
-        <GoodList />
+        {/* <GoodList /> */}
+
+        <FormReg />
       </Container>
     </>
   );

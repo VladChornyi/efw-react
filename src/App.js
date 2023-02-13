@@ -6,12 +6,14 @@ import PostList from "./components/PostList/PostList";
 import posts from "./data/post.json";
 import { AccordionItem } from "./components/AccordionItem/AccordionItems.jsx";
 import { FAQ } from "./components/FAQ/FAQ";
+import Tabs from "./components/Tabs/Tabs.jsx";
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Container>
+        <Tabs />
         <AccordionItem />
         <FAQ />
       </Container>

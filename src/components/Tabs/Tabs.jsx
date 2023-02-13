@@ -7,15 +7,19 @@ const LOCAL_KEY = "index";
 
 export default class Tabs extends Component {
   state = {
-    ind: 0,
+    // ind: 0,
+    ind: this.getLocalData() ?? 0,
   };
 
-  componentDidMount() {
-    const localData = JSON.parse(localStorage.getItem(LOCAL_KEY));
-    console.log(localData, this.state.ind);
-    if (localData === null) {return}
-    this.setState({ind: localData,});
-  };
+  getLocalData() {const localData = JSON.parse(localStorage.getItem(LOCAL_KEY));
+      return localData;}
+
+  // componentDidMount() {
+  //   const localData = JSON.parse(localStorage.getItem(LOCAL_KEY));
+  //   console.log(localData, this.state.ind);
+  //   if (localData === null) {return}
+  //   this.setState({ind: localData,});
+  // };
 
   componentDidUpdate(prevProps, prevState) {
     localStorage.setItem(LOCAL_KEY, this.state.ind);

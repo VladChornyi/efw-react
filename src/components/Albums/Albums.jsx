@@ -6,11 +6,14 @@
 
 import React, { Component } from "react";
 import { getAlbumsService } from "../../services/albums";
+import { Pagination } from "../Pagination/Pagination";
 
 export default class Albums extends Component {
   state = {
     albums: [],
     status: "idle",
+    perPage: 10,
+    currentPage: 1,
   };
   async componentDidMount() {
     this.setState({ status: "loading" });
@@ -22,15 +25,35 @@ export default class Albums extends Component {
       throw new Error(error.message);
     }
   }
+
+  handleChangePage = (targetPage) => {
+    this.setState({
+      currentPage: targetPage,
+    })
+  }
+   
+  getActiveAlbums = () => {
+    const {perPage, currentPage } = this.state;
+    const start = (currentPage * perPage) - perPage; // 2 * 10 - 10 
+    const end = currentPage * perPage;
+    return this.state.albums.slice(start, end);
+  }
+
   render() {
+    const { albums, perPage, currentPage } = this.state;
     return (
-      <h3>
+      <>
         <ul>
-          {this.state.albums.map((album) => (
+          {this.getActiveAlbums().map((album) => (
             <li key={album.id}>{album.title}</li>
           ))}
         </ul>
-      </h3>
+        <Pagination
+          totalPages={Math.ceil(albums.length / perPage)}
+          currentPage={currentPage}
+          onChangePage={this.handleChangePage}
+        />
+      </>
     );
   }
 }

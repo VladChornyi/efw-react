@@ -11,7 +11,7 @@
 import { Component } from "react";
 import { starWarsDataFetch } from "../../services/starWars";
 import { SearchField } from "./SearchField/SearchField";
-import {StarWarsItem} from './StarWarsItem/StarWarsItem';
+import { StarWarsItem } from "./StarWarsItem/StarWarsItem";
 
 export class StarWars extends Component {
   state = {
@@ -41,11 +41,11 @@ export class StarWars extends Component {
       <>
         <SearchField handleSubmit={this.handleSubmit} />
         <ul>
-            {
-                this.state.starWarsData?.map( item => (
-                    <StarWarsItem key={item.name} info ={item}>{item.name}</StarWarsItem>
-                ))
-            }
+          {this.state.starWarsData?.map((item) => (
+            <StarWarsItem key={item.name} info={item}>
+              {item.name}
+            </StarWarsItem>
+          ))}
         </ul>
       </>
     );

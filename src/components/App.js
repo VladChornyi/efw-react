@@ -7,6 +7,7 @@ import { AccordionItem } from "./AccordionItem/AccordionItems.jsx";
 import { FAQ } from "./FAQ/FAQ";
 import Tabs from "./Tabs/Tabs.jsx";
 import Albums from "./Albums/Albums";
+import { StarWars } from "./StarWars/StarWars";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <AccordionItem />
         <FAQ />
       </Container> */}
-      <Albums />
+      {/* <Albums /> */}
+      <StarWars/>
     </>
   );
 }

@@ -8,18 +8,20 @@ import { FAQ } from "./FAQ/FAQ";
 import Tabs from "./Tabs/Tabs.jsx";
 import Albums from "./Albums/Albums";
 import { StarWars } from "./StarWars/StarWars";
+import { FormReg } from "./FormReg/FormReg";
 
 function App() {
   return (
     <>
+      <FormReg/>
       {/* <GlobalStyle />
       <Container>
-        <Tabs />
+        <Tabs /> */}
         <AccordionItem />
-        <FAQ />
-      </Container> */}
+        {/* <FAQ /> */}
+      {/* </Container>
       {/* <Albums /> */}
-      <StarWars/>
+      {/* <StarWars/> */} 
     </>
   );
 }

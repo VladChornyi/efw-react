@@ -1,3 +1,4 @@
+import { NavLink, Route, Routes } from "react-router-dom";
 import { Button } from "./Button/Button";
 import { Container } from "./Container/Container";
 import { GlobalStyle } from "./GlobalStyle";
@@ -9,19 +10,32 @@ import Tabs from "./Tabs/Tabs.jsx";
 import Albums from "./Albums/Albums";
 import { StarWars } from "./StarWars/StarWars";
 import { FormReg } from "./FormReg/FormReg";
+import { HomePage } from "../pages/HomePage";
+import { TasksPage } from "../pages/TasksPage/TasksPage";
+import { Boys } from "./Boys/Boys";
 
 function App() {
   return (
     <>
-      <FormReg/>
+      {/* <FormReg/> */}
       {/* <GlobalStyle />
       <Container>
         <Tabs /> */}
-        <AccordionItem />
-        {/* <FAQ /> */}
+      {/* <AccordionItem /> */}
+      {/* <FAQ /> */}
       {/* </Container>
       {/* <Albums /> */}
-      {/* <StarWars/> */} 
+      {/* <StarWars/> */}
+      <nav>
+        <NavLink to="/">HomePage</NavLink>
+        <NavLink to="/tasks">TasksPage</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/tasks" element={<TasksPage />}>
+          <Route path="boys" element={<Boys />} />
+        </Route>
+      </Routes>
     </>
   );
 }

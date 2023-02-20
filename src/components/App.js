@@ -13,30 +13,20 @@ import { FormReg } from "./FormReg/FormReg";
 import { HomePage } from "../pages/HomePage";
 import { TasksPage } from "../pages/TasksPage/TasksPage";
 import { Boys } from "./Boys/Boys";
+import { ErrorPage } from "../pages/ErrorPage/ErrorPage.jsx";
+import { Layout } from "./Layout/Layout";
 
 function App() {
   return (
-    <>
-      {/* <FormReg/> */}
-      {/* <GlobalStyle />
-      <Container>
-        <Tabs /> */}
-      {/* <AccordionItem /> */}
-      {/* <FAQ /> */}
-      {/* </Container>
-      {/* <Albums /> */}
-      {/* <StarWars/> */}
-      <nav>
-        <NavLink to="/">HomePage</NavLink>
-        <NavLink to="/tasks">TasksPage</NavLink>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
         <Route path="/tasks" element={<TasksPage />}>
           <Route path="boys" element={<Boys />} />
         </Route>
-      </Routes>
-    </>
+        <Route path="*" element={<ErrorPage />} />
+      </Route>
+    </Routes>
   );
 }
 

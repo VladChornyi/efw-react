@@ -11,6 +11,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { starWarsDataFetch } from "../../services/starWars";
+import { GoBack } from "../GoBack/GoBack";
 import { SearchField } from "./SearchField/SearchField";
 import { StarWarsItem } from "./StarWarsItem/StarWarsItem";
 
@@ -62,6 +63,7 @@ export function StarWars () {
 
     return (
       <>
+      <GoBack/>
         <SearchField handleSubmit={handleSubmit} />
         <ul>
           {starWarsData?.map((item) => (

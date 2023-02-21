@@ -1,30 +1,34 @@
-import { Component } from "react";
+import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
-export class SearchField extends Component {
-state = {
-    name: '',
-}
+export function SearchField({ handleSubmit }) {
+  const [searchParams] = useSearchParams();
+  const searchName = searchParams.get("name"); 
 
-handleInput = ( event )=> {
-this.setState({name: event.target.value})
-}
+  const [name, setName] = useState(searchName ?? '');
 
-handleFormSUbmit = (event) => {
+  const handleInput = (event) => {
+    setName(event.target.value);
+    // this.setState({name: event.target.value})
+  };
+
+  const handleFormSUbmit = (event) => {
     event.preventDefault();
-    this.props.handleSubmit(this.state.name);
-}
+    handleSubmit(name);
+  };
 
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleFormSUbmit}>
-                <input type="text"
-                 placeholder="Enter character name" 
-                 name="name"
-                 value={this.state.name} onChange={this.handleInput}/>
-                 <button>Search</button>
-                </form>
-            </div>
-        )
-    }
+  return (
+    <div>
+      <form onSubmit={handleFormSUbmit}>
+        <input
+          type="text"
+          placeholder="Enter character name"
+          name="name"
+          value={name}
+          onChange={handleInput}
+        />
+        <button>Search</button>
+      </form>
+    </div>
+  );
 }

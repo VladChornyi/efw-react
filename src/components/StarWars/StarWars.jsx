@@ -8,40 +8,63 @@
 
 // Для пошуку використовуйте API `https://swapi.py4e.com/api/people/?search=people_name`
 
-import { Component } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { starWarsDataFetch } from "../../services/starWars";
 import { SearchField } from "./SearchField/SearchField";
 import { StarWarsItem } from "./StarWarsItem/StarWarsItem";
 
-export class StarWars extends Component {
-  state = {
-    starWarsData: null,
-    serchQuery: "",
-    error: null,
+
+export function StarWars () {
+  const [starWarsData, setStarWarsData] = useState(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  const serchQuery = searchParams.get("name");
+ 
+  
+  // state = {
+  //   starWarsData: null,
+  //   serchQuery: "",
+  //   error: null,
+  // };
+
+  const handleSubmit = (query) => {
+    setSearchParams({name : query});
+    // this.setState({ serchQuery: query });
   };
 
-  handleSubmit = (query) => {
-    this.setState({ serchQuery: query });
-  };
-
-  async componentDidUpdate(prevProps, prevState) {
-    const { serchQuery } = this.state;
-    try {
-      if (prevState.serchQuery !== serchQuery) {
+  useEffect(() => {
+    async function fetchHeroes() {
+      try {
         const result = await starWarsDataFetch(serchQuery);
-        this.setState({ starWarsData: result });
+        setStarWarsData(result);
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      this.setState({ error: error.message });
     }
-  }
 
-  render() {
+    fetchHeroes();
+  }, [serchQuery]);
+
+  // async componentDidUpdate(prevProps, prevState) {
+  //   const { serchQuery } = this.state;
+  //   try {
+  //     if (prevState.serchQuery !== serchQuery) {
+  //       const result = await starWarsDataFetch(serchQuery);
+  //       this.setState({ starWarsData: result });
+  //     }
+  //   } catch (error) {
+  //     this.setState({ error: error.message });
+  //   }
+  // }
+
+
     return (
       <>
-        <SearchField handleSubmit={this.handleSubmit} />
+        <SearchField handleSubmit={handleSubmit} />
         <ul>
-          {this.state.starWarsData?.map((item) => (
+          {starWarsData?.map((item) => (
             <StarWarsItem key={item.name} info={item}>
               {item.name}
             </StarWarsItem>
@@ -49,5 +72,4 @@ export class StarWars extends Component {
         </ul>
       </>
     );
-  }
 }

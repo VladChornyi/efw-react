@@ -23,6 +23,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/tasks" element={<TasksPage />}>
           <Route path="boys" element={<Boys />} />
+          <Route path='starwars' element={<StarWars/>} />
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Route>

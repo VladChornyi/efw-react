@@ -15,9 +15,12 @@ import { TasksPage } from "../pages/TasksPage/TasksPage";
 import { Boys } from "./Boys/Boys";
 import { ErrorPage } from "../pages/ErrorPage/ErrorPage.jsx";
 import { Layout } from "./Layout/Layout";
+import { Counter } from "./Counter/Counter";
 
 function App() {
   return (
+    <>
+    <Counter/>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
@@ -28,6 +31,8 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
+    </>
+  
   );
 }
 

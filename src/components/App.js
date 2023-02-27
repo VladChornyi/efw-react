@@ -15,19 +15,26 @@ import { TasksPage } from "../pages/TasksPage/TasksPage";
 import { Boys } from "./Boys/Boys";
 import { ErrorPage } from "../pages/ErrorPage/ErrorPage.jsx";
 import { Layout } from "./Layout/Layout";
+import { Counter } from "./Counter/Counter";
+import { GoodList } from "./GoodsList/GoodsList";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/tasks" element={<TasksPage />}>
-          <Route path="boys" element={<Boys />} />
-          <Route path='starwars' element={<StarWars/>} />
+    <>
+      <Counter />
+      <GoodList />
+
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/tasks" element={<TasksPage />}>
+            <Route path="boys" element={<Boys />} />
+            <Route path="starwars" element={<StarWars />} />
+          </Route>
+          <Route path="*" element={<ErrorPage />} />
         </Route>
-        <Route path="*" element={<ErrorPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }
 

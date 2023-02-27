@@ -1,31 +1,22 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import boysList from "../../data/boys.json";
+import boys from "../../data/boys.json";
+import { deleteAction } from "../../redux/boys/boysReducer";
 import { GoBack } from "../GoBack/GoBack";
 import { ListItem } from "../PostItem/PostItem.styled";
 
 export const Boys = () => {
-  // state = {
-  //   boysList: boysList,
-  //   //   boyslist,
-  // };
-
-  const [boysList, setBoysList] = useState([]);
-
+  const dispatch = useDispatch();
+  const boysList = useSelector((state)=>state.boys.items);
+  // const [boysList, setBoysList] = useState(boys);
   const handleDelete = (event) => {
-    setBoysList((prevState) =>
-      prevState.filter((el) => Number(el.id) !== Number(event.target.id))
-    );
-    // this.setState((prevState) => ({
-    //   boysList: prevState.boysList.filter(
-    //     (el) => Number(el.id) !== Number(event.target.id)
-    //   ),
-    // }));
+    dispatch(deleteAction(event.target.id));
   };
 
   return (
     <>
-    <GoBack/>
+      <GoBack />
       <ul>
         {boysList.map(({ id, name }) => {
           return (

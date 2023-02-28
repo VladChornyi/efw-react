@@ -17,6 +17,7 @@ import { ErrorPage } from "../pages/ErrorPage/ErrorPage.jsx";
 import { Layout } from "./Layout/Layout";
 import { Counter } from "./Counter/Counter";
 import { GoodList } from "./GoodsList/GoodsList";
+import { Users } from "./Users/Users";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/tasks" element={<TasksPage />}>
             <Route path="boys" element={<Boys />} />
             <Route path="starwars" element={<StarWars />} />
+            <Route path="users" element={<Users />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>

@@ -18,6 +18,7 @@ import { Layout } from "./Layout/Layout";
 import { Counter } from "./Counter/Counter";
 import { GoodList } from "./GoodsList/GoodsList";
 import { Users } from "./Users/Users";
+import { AuthPage } from "../pages/AuthPage/AuthPage";
 
 function App() {
   return (
@@ -28,10 +29,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path='/register'  element={<AuthPage/>} />
           <Route path="/tasks" element={<TasksPage />}>
             <Route path="boys" element={<Boys />} />
             <Route path="starwars" element={<StarWars />} />
             <Route path="users" element={<Users />} />
+            
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>

@@ -29,12 +29,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path='/register'  element={<AuthPage/>} />
+          <Route path="/register" element={<AuthPage />} />
+          <Route path="/login" element={<AuthPage isLogin />} />
           <Route path="/tasks" element={<TasksPage />}>
             <Route path="boys" element={<Boys />} />
             <Route path="starwars" element={<StarWars />} />
             <Route path="users" element={<Users />} />
-            
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>

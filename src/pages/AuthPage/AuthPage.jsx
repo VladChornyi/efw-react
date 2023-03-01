@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { userRegister } from "../../redux/auth/auth";
+import { userLogin, userRegister } from "../../redux/auth/authOperation";
 
-export function AuthPage() {
+export function AuthPage({ isLogin }) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -24,14 +24,23 @@ export function AuthPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      userRegister({
-        email,
-        first_name: name,
-        last_name: surname,
-        password: password,
-      })
-    );
+    if (isLogin) {
+      dispatch(
+        userLogin({
+          email,
+          password,
+        })
+      );
+    } else {
+      dispatch(
+        userRegister({
+          email,
+          first_name: name,
+          last_name: surname,
+          password: password,
+        })
+      );
+    }
   };
 
   return (
@@ -43,19 +52,23 @@ export function AuthPage() {
         onChange={handleChange}
       />
 
-      <input
-        type="text"
-        placeholder="name"
-        name="name"
-        onChange={handleChange}
-      />
+      {!isLogin && (
+        <>
+          <input
+            type="text"
+            placeholder="name"
+            name="name"
+            onChange={handleChange}
+          />
 
-      <input
-        type="text"
-        placeholder="surname"
-        name="surname"
-        onChange={handleChange}
-      />
+          <input
+            type="text"
+            placeholder="surname"
+            name="surname"
+            onChange={handleChange}
+          />
+        </>
+      )}
 
       <input
         type="password"
@@ -63,7 +76,7 @@ export function AuthPage() {
         name="password"
         onChange={handleChange}
       />
-      <button type="submit">Sing Up</button>
+      <button type="submit">{isLogin ? "Sing in" : "Sign up"}</button>
     </form>
   );
 }

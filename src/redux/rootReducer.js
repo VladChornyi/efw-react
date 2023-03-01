@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { userRegister } from "./auth/auth";
+import { authReducer } from "./auth/authSlice";
 import { boysReducer } from "./boys/boysReducer";
 import { counterReducer } from "./counter/counterReducer";
 import { goodsListReducer } from "./goods/goodsReducer";
@@ -12,5 +12,5 @@ export const rootReducer = combineReducers({
   boys: boysReducer,
   starWars: starWarsReducer,
   users: usersReducer,
-  // auth: userRegister,
+  auth: authReducer,
 });

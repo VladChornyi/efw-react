@@ -9,6 +9,7 @@ export function Layout() {
           <NavLink to="/">HomePage</NavLink>
           <NavLink to="/tasks">TasksPage</NavLink>
           <NavLink to="/register">AuthPage</NavLink>
+          <NavLink to="/login">LoginPage</NavLink>
         </nav>
       </header>
       <main>

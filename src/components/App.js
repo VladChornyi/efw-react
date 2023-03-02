@@ -19,8 +19,15 @@ import { Counter } from "./Counter/Counter";
 import { GoodList } from "./GoodsList/GoodsList";
 import { Users } from "./Users/Users";
 import { AuthPage } from "../pages/AuthPage/AuthPage";
+import { useEffect } from "react";
+import { refreshUser } from "../redux/auth/authOperation";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshUser())
+  })
   return (
     <>
       <Counter />

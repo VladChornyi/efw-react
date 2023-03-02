@@ -4,7 +4,7 @@ const publicHost = axios.create({
   baseURL: "http://70.34.201.18:4444",
 });
 
-const privateHost = axios.create({
+export const privateHost = axios.create({
   baseURL: "http://70.34.201.18:4444",
 });
 
@@ -18,8 +18,14 @@ export async function login(credential) {
   return data;
 }
 
+export async function getUserData() {
+  const { data } = await privateHost.get("/users/profile");
+  return data;
+}
+
 export const token = {
   set: (token, token_type) => {
+    console.log(token);
     privateHost.defaults.headers.common.Authorization = `${token_type} ${token}`;
   },
   unSet: () => {

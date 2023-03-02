@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { userLogin } from "./authOperation";
 
 const initialState = {
-  access_token: "string",
-  token_type: "string",
+  access_token: null,
+  token_type: null,
   isLoading: false,
   error: null,
 };

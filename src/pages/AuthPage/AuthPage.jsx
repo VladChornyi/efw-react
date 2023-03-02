@@ -1,7 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { userLogin, userRegister } from "../../redux/auth/authOperation";
+import {
+  refreshUser,
+  userLogin,
+  userRegister,
+} from "../../redux/auth/authOperation";
 
 export function AuthPage({ isLogin }) {
   const dispatch = useDispatch();
@@ -30,7 +34,12 @@ export function AuthPage({ isLogin }) {
           email,
           password,
         })
-      );
+      )
+        .unwrap()
+        .then((data) => {
+          console.log(data);
+          dispatch(refreshUser());
+        });
     } else {
       dispatch(
         userRegister({
@@ -39,7 +48,12 @@ export function AuthPage({ isLogin }) {
           last_name: surname,
           password: password,
         })
-      );
+      )
+        .unwrap()
+        .then((data) => {
+          console.log(data);
+          dispatch(refreshUser());
+        });
     }
   };
 

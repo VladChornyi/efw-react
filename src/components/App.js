@@ -22,6 +22,9 @@ import { AuthPage } from "../pages/AuthPage/AuthPage";
 import { useEffect } from "react";
 import { refreshUser } from "../redux/auth/authOperation";
 import { useDispatch } from "react-redux";
+import {PrivateRoute} from '../components/PrivateRoute/PrivateRoute';
+import {PublicRoute} from '../components/PublicRoute/PublicRoute';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -36,9 +39,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path='/' element={<PublicRoute/>}>
           <Route path="/register" element={<AuthPage />} />
           <Route path="/login" element={<AuthPage isLogin />} />
-          <Route path="/tasks" element={<TasksPage />}>
+          </Route>
+          <Route path='/' element={<PrivateRoute/>}> 
+           <Route path="/tasks" element={<TasksPage />}>
+           </Route>
             <Route path="boys" element={<Boys />} />
             <Route path="starwars" element={<StarWars />} />
             <Route path="users" element={<Users />} />

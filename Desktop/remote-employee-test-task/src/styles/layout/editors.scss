@@ -1,0 +1,252 @@
+.editors {
+  padding: 20px 0;
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &_wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &_title {
+    width: 100%;
+    @include onDesktop {
+      width: 15%;
+      text-align: right;
+    }
+  }
+
+  &_subtitle {
+    font-weight: 700;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      font-size: $fz-35;
+    }
+  }
+
+  &_text {
+    line-height: 20px;
+    margin-bottom: 20px;
+    @include onDesktop {
+      font-size: $fz-18;
+    }
+  }
+}
+
+.slider-editors {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  @include onDesktop{
+    width: 75%;
+  }
+
+  .swiper-editors {
+    width: 100%;
+
+    .swiper-slide {
+      width: 100%;
+
+      .swiper-content-img {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .swiper-img-decoration {
+          position: absolute;
+          bottom: -300px;
+          left: 0;
+          padding: 30px;
+          background-color: rgba(40, 39, 42, 0.8);
+          transition: bottom 0.3s;
+
+          h3 {
+            font-size: $fz-24;
+            font-weight: 700;
+            margin-bottom: 5px;
+          }
+
+          span {
+            font-weight: 700;
+            font-size: $fz-20;
+            display: block;
+            margin-bottom: 30px;
+            color: $menu-items-color;
+          }
+
+          p {
+            font-size: $fz-16;
+            line-height: 20px;
+          }
+        }
+
+        .swiper-img-long {
+          position: relative;
+          width: 66%;
+          height: 500px;
+          overflow: hidden;
+
+          .swiper-img-decoration {
+            transition: bottom 0.3s;
+            bottom: 0;
+          }
+
+          img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .swiper-img-short {
+          width: 28%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .swiper-img {
+            position: relative;
+            width: 100%;
+            height: 225px;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .swiper-img-block {
+        display: flex;
+        justify-content: space-between;
+
+        .swiper-img {
+          position: relative;
+          height: 200px;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+            height: inherit;
+          }
+        }
+
+        .swiper-img:nth-child(1) {
+          width: 28%;
+        }
+
+        .swiper-img:nth-child(2) {
+          width: 66%;
+        }
+      }
+    }
+
+    .swiper-pagination-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      gap:5px;
+
+      @include onDesktop{
+        margin-bottom: 50px;
+      }
+
+      .button-prev,
+      .button-next {
+        position: unset;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        @include onDesktop{
+          position: unset;
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          background-color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+        &:hover {
+          background-color: $accent-color;
+        }
+      }
+
+      .swiper-sort {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        .swiper-sort-icon {
+          width: 11px;
+          height: 11px;
+          transform: rotate(-90deg);
+          stroke: $white;
+          margin-left: 5px;
+        }
+      }
+
+      .icon-next {
+        width: 10px;
+        height: 10px;
+        transform: rotate(-180deg);
+        stroke: $black;
+        @include onDesktop{
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      .icon-prev {
+        width: 10px;
+        height: 10px;
+        stroke: $black;
+        @include onDesktop{
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      .decoration-left {
+        width: 50%;
+        height: 2px;
+        background-color: $decoration-swiper;
+      }
+
+      .decoration-center {
+        width: 20px;
+        height: 2px;
+        background-color: $decoration-swiper;
+      }
+
+      .decoration-right {
+        width: 20px;
+        height: 2px;
+        background-color: $decoration-swiper;
+      }
+
+      .swiper-pagination {
+        position: relative;
+        width: 80px;
+        bottom: 0;
+      }
+    }
+  }
+}

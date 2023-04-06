@@ -1,0 +1,69 @@
+.mob-menu-btn {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  @include onDesktop {
+    display: none;
+  }
+}
+
+.mob-menu {
+  background-color: $background;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  padding: 60px 60px;
+  transform: translateX(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.is-open {
+  transform: translateX(0);
+  opacity: 1;
+}
+mob-menu-list {
+  padding-left: 20px;
+  padding-top: 60px;
+}
+.mob-menu-item {
+  color: $menu-items-color;
+  font-weight: 700;
+  margin-bottom: 30px;
+  transition: color 0.3s;
+  position: relative;
+  padding-right: 40px;
+  a {
+    margin-right: 60px;
+  }
+
+  &:hover {
+    color: $white;
+    transition: color 0.3s;
+  }
+
+  &:active {
+    color: $white;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      top: 50%;
+      left: 80%;
+    }
+  }
+}

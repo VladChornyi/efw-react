@@ -1,0 +1,167 @@
+.featured {
+  padding: 50px 0;
+
+  z-index: 1;
+  position: relative;
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &_wrapper {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    @include onDesktop {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: row;
+    }
+  }
+
+  &_title {
+    text-align: right;
+    @include onDesktop {
+      width: 18%;
+      text-align: right;
+    }
+
+    .featured-subtitle {
+      @include onDesktop {
+        font-size: $fz-35;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+    }
+
+    .featured-text {
+      @include onDesktop {
+        font-size: $fz-20;
+        line-height: 20px;
+        margin-bottom: 90px;
+      }
+    }
+
+    .button-featured {
+      color: $white;
+      font-weight: 600;
+      position: relative;
+      width: 100%;
+      @include onDesktop {
+        color: $white;
+        font-weight: 600;
+        font-size: $fz-18;
+        position: relative;
+        width: 100%;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 2px;
+        background-color: $white;
+        left: 0;
+        top: 50%;
+      }
+    }
+  }
+
+  &_slider {
+    width: 90%;
+    @include onDesktop {
+      width: 70%;
+      overflow: hidden;
+    }
+
+    .swiper-featured {
+      width: 100%;
+
+      .swiper-slide {
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100px;
+          object-fit: cover;
+          @include onDesktop {
+            height: 270px;
+          }
+
+          @media (max-width: 1440px) {
+            height: 200px;
+          }
+        }
+
+        h3 {
+          height: 20px;
+          margin-top: 10px;
+          font-size: $fz-45;
+          font-weight: 700;
+          @include onDesktop{
+            margin-top: 30px;
+            font-size: $fz-22;
+          }
+        }
+
+        span {
+          font-size: 13px;
+          font-weight: 700;
+          color: #666;
+          margin-bottom: 10px;
+          display: block;
+      @include onDesktop{
+        font-size: $fz-20;      
+        margin-bottom: 20px;
+      
+      }
+        }
+
+        p {
+          font-size: $fz-35;
+          margin-bottom: 25px;
+          @include onDesktop{
+            font-size: $fz-18;
+            margin-bottom: 25px;
+          }
+        }
+
+        a {
+          color: $accent-color;
+        }
+      }
+
+      .swiper-pagination-wrapper {
+        margin: 50px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include onDesktop {
+          margin: 100px 0 0;
+        }
+
+        .swiper-pagination {
+          position: unset;
+          width: 60px;
+        }
+
+        .decoration-left {
+          width: 60%;
+          height: 2px;
+          background-color: $decoration-swiper;
+        }
+
+        .decoration-right {
+          width: 7%;
+          height: 2px;
+          background-color: $decoration-swiper;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+.header {
+  position: relative;
+
+  &_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    z-index: 2;
+  }
+
+  &_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 50px;
+
+    background: linear-gradient(180deg, rgba(120, 139, 140, 1) 0%,
+    rgba(238, 130, 238, 0) 100%);
+
+  
+  }
+
+  &_logo {
+    display: flex;
+    align-items: center;
+
+    width: 60px;
+    height: 100%;
+    padding-left: 20px;
+
+    background-color: $accent-color;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+
+    @include onDesktop {
+      width: 23%;
+      padding-left: 60px;
+    }
+
+    a {
+      color: $main-color;
+      font-size: $fz-45;
+      font-weight: 700;
+
+      @include onDesktop {
+        font-size: $fz-24;
+      }
+    }
+  }
+
+  &_account {
+    margin-right: 5%;
+  }
+
+  &_menu {
+
+    width: 60px;
+    height: 40px;
+    background-color: rgba(40, 39, 42, 0.4);
+    position: absolute;
+    top: 50px;
+    overflow: hidden;
+
+
+@include onDesktop {
+  width: 18%;
+  height: 700px;
+  background-color: rgba(40, 39, 42, 0.4);
+  position: absolute;
+  top: 70px;
+  overflow: hidden;
+}
+  }
+}
+
+.account-list {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 2px;
+    background-color: $white;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: $fz-45;
+ 
+  &:hover{
+    color: $accent-color;
+    transform: scale(1.1);
+  }
+  @include onDesktop {
+    font-size: $fz-18;
+  }
+}
+
+.account-img {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: $black;
+}
+
+.menu-list {
+  padding-left: 60px;
+  padding-top: 80px;
+
+  .menu-item {
+    font-size: $fz-20;
+    color: $menu-items-color;
+    font-weight: 700;
+    margin-bottom: 30px;
+    transition: color 0.3s;
+    position: relative;
+    padding-right: 20px;
+
+    a {
+      margin-right: 60px;
+    }
+
+    &:hover {
+      color: $white;
+      transition: color 0.3s;
+    }
+
+    &.js-active {
+      color: $white;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+        top: 50%;
+      }
+    }
+  }
+
+  .menu-item:nth-child(2) {
+    a {
+      margin-right: 20px;
+    }
+  }
+}

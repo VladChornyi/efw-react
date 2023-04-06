@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trppd_</title>
+    <link rel="shortcut icon" href="./images/icons/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.scss" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_wrapper">
+        <div class="header_top">
+          <div class="header_logo">
+            <a href="#">trppd __</a>
+          </div>
+          <div class="header_account">
+            <ul class="account-list">
+              <li class="account-item">
+                <a href="#" onclick="event.preventDefault();">My collection</a>
+              </li>
+              <li class="account-item">
+                <a href="#" onclick="event.preventDefault();">Galih Pambudi</a>
+                <div class="account-img"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="header_menu">
+          <button type="button" class="mob-menu-btn" data-menu-open>
+            <img src="./images/icons/burger-menu.png" alt="burger" />
+          </button>
+          <ul class="menu-list">
+            <li class="menu-item js-active">
+              <a href="#" onclick="event.preventDefault();" class="menu-link">
+                Home
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" onclick="event.preventDefault();" class="menu-link">
+                Recommendation
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" onclick="event.preventDefault();" class="menu-link">
+                Explore
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" onclick="event.preventDefault();" class="menu-link">
+                Help
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#" onclick="event.preventDefault();" class="menu-link">
+                About us
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="mob-menu" data-menu>
+        <div class="containe mob-menu-top">
+          <button class="mob-menu-close" type="button" data-menu-close>
+            <img src="./images/icons/cancel.png" alt="close" />
+          </button>
+          <nav class="mob-nav">
+            <ul class="mob-menu-list">
+              <li class="mob-menu-item">
+                <a
+                  href="#"
+                  onclick="event.preventDefault();"
+                  class="mob-menu-link"
+                >
+                  Home
+                </a>
+              </li>
+              <li class="mob-menu-item">
+                <a
+                  href="#"
+                  onclick="event.preventDefault();"
+                  class="mob-menu-link"
+                >
+                  Recommendation
+                </a>
+              </li>
+              <li class="mob-menu-item">
+                <a
+                  href="#"
+                  onclick="event.preventDefault();"
+                  class="mob-menu-link"
+                >
+                  Explore
+                </a>
+              </li>
+              <li class="mob-menu-item">
+                <a
+                  href="#"
+                  onclick="event.preventDefault();"
+                  class="mob-menu-link"
+                >
+                  Help
+                </a>
+              </li>
+              <li class="mob-menu-item">
+                <a
+                  href="#"
+                  onclick="event.preventDefault();"
+                  class="mob-menu-link"
+                >
+                  About us
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="slider">
+      <div class="swiper-header">
+        <div class="swiper-content">
+          <h2 class="swiper-title">The Walchen Lake</h2>
+          <p class="swiper-text">
+            One of the deepest and largest alpine lakes in the Germany and one
+            of the best outdoors place that you never imagine before.
+          </p>
+          <button class="button">Read more</button>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/header/main-slide.jpg" alt="swiper img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/header/slide-2.jpg" alt="swiper img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/header/slide-3.jpg" alt="swiper img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/header/slide-4.jpg" alt="swiper img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/header/slide-5.jpg" alt="swiper img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/header/slide-6.jpg" alt="swiper img" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/header/slide-7.jpg" alt="swiper img" />
+          </div>
+        </div>
+        <div class="swiper-buttons">
+          <div class="button-prev">
+            <svg class="icon-prev">
+              <use href="./images/icons/sprite.svg#arrow-left"></use>
+            </svg>
+          </div>
+          <div class="button-next">
+            <svg class="icon-next">
+              <use href="./images/icons/sprite.svg#arrow-left"></use>
+            </svg>
+          </div>
+          <p class="swiper-decoration-text">Outdoor Edition</p>
+          <div class="swiper-decoration-left"></div>
+          <div class="pagination-block">
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="swiper-decoration-right"></div>
+        </div>
+      </div>
+    </div>
+
+    <main id="root">
+      <section class="featured">
+        <div class="container">
+          <div class="featured_wrapper">
+            <div class="featured_title">
+              <h3 class="featured-subtitle">
+                Featured <br />
+                Spots
+              </h3>
+              <p class="featured-text">
+                Some of featured spot that you might want visit before you die
+              </p>
+              <div class="button-featured">
+                <a>View All</a>
+              </div>
+            </div>
+            <div class="featured_slider">
+              <div class="swiper-featured">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./images/featured/pic-1.jpg" alt="img" />
+                    <h3>Ollantaytambo</h3>
+                    <span>Peru</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Eius eligendi eos explicabo fugiat iste labore minus natus
+                      non quia ratione, repellat reprehenderit, saepe sapiente
+                      ullam, vero?
+                    </p>
+                    <a href="#" onclick="event.preventDefault();">read more</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/featured/pic-2.jpg" alt="img" />
+                    <h3>Antelope Canyon</h3>
+                    <span>USA</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Eius eligendi eos explicabo fugiat iste labore minus natus
+                      non quia ratione, repellat reprehenderit, saepe sapiente
+                      ullam, vero?
+                    </p>
+                    <a href="#" onclick="event.preventDefault();">read more</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/featured/pic-3.jpg" alt="img" />
+                    <h3>Lake Louise</h3>
+                    <span>Canada</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Eius eligendi eos explicabo fugiat iste labore minus natus
+                      non quia ratione, repellat reprehenderit, saepe sapiente
+                      ullam, vero?
+                    </p>
+                    <a href="#" onclick="event.preventDefault();">read more</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/featured/pic-1.jpg" alt="img" />
+                    <h3>Antelope Canyon</h3>
+                    <span>Peru</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Eius eligendi eos explicabo fugiat iste labore minus natus
+                      non quia ratione, repellat reprehenderit, saepe sapiente
+                      ullam, vero?
+                    </p>
+                    <a href="#" onclick="event.preventDefault();">read more</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/featured/pic-2.jpg" alt="img" />
+                    <h3>Antelope Canyon</h3>
+                    <span>USA</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Eius eligendi eos explicabo fugiat iste labore minus natus
+                      non quia ratione, repellat reprehenderit, saepe sapiente
+                      ullam, vero?
+                    </p>
+                    <a href="#" onclick="event.preventDefault();">read more</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/featured/pic-3.jpg" alt="img" />
+                    <h3>Antelope Canyon</h3>
+                    <span>Peru</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Eius eligendi eos explicabo fugiat iste labore minus natus
+                      non quia ratione, repellat reprehenderit, saepe sapiente
+                      ullam, vero?
+                    </p>
+                    <a href="#" onclick="event.preventDefault();">read more</a>
+                  </div>
+                </div>
+                <div class="swiper-pagination-wrapper">
+                  <span>Outdoors Edition</span>
+                  <div class="decoration-left"></div>
+                  <div class="swiper-pagination"></div>
+                  <div class="decoration-right"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="above">
+        <div class="above_wrapper">
+          <div class="above_img">
+            <img src="./images/above/sea.jpg" alt="sea" />
+          </div>
+          <div class="above_content">
+            <h2 class="above-title">
+              Above <br />
+              The Sea
+            </h2>
+            <q class="above-cursive">
+              &nbsp; Eros reque munere ul quo, commado ullamcorper ad cam. His
+              aeterno scriplorem ci, sea ut epicuri lincidunt. &nbsp;
+            </q>
+            <p class="above-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
+              earum eum explicabo laboriosam maiores nobis nulla ratione sed
+              sint veniam.
+            </p>
+            <p class="above-text">
+              Accusamus, accusantium esse expedita fuga fugiat iste nisi nobis
+              vel? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Corporis earum eum explicabo laboriosam maiores nobis nulla
+              ratione sed sint veniam. Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Corporis earum eum explicabo laboriosam maiores
+              nobis nulla ratione sed sint veniam. Lorem ipsum dolor sit amet,
+              consectetur adipisicing elit. Corporis earum eum explicabo
+              laboriosam sed sint veniam.
+            </p>
+            <button class="button">Read more</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="editors">
+        <div class="container">
+          <div class="editors_wrapper">
+            <div class="editors_title">
+              <h3 class="editors_subtitle">
+                Editor`s <br />
+                Pick
+              </h3>
+              <p class="editors_text">
+                Our picks, just for you nam an vidisse admodum omittantur, nihil
+                corrumpit
+              </p>
+            </div>
+            <div class="slider-editors">
+              <div class="swiper-editors">
+                <div class="swiper-pagination-wrapper">
+                  <div class="button-prev">
+                    <svg class="icon-prev">
+                      <use href="./images/icons/sprite.svg#arrow-left"></use>
+                    </svg>
+                  </div>
+                  <div class="button-next">
+                    <svg class="icon-next">
+                      <use href="./images/icons/sprite.svg#arrow-left"></use>
+                    </svg>
+                  </div>
+                  <div class="decoration-left"></div>
+                  <div class="swiper-pagination"></div>
+                  <div class="decoration-center"></div>
+                  <div class="swiper-sort">
+                    sort by
+                    <svg class="swiper-sort-icon">
+                      <use href="./images/icons/sprite.svg#arrow-left"></use>
+                    </svg>
+                  </div>
+                  <div class="decoration-right"></div>
+                </div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="swiper-content-img">
+                      <div class="swiper-img-long">
+                        <img src="./images/editors/img1.jpg" alt="img" />
+                        <div class="swiper-img-decoration">
+                          <h3>Flatiron</h3>
+                          <span>USA</span>
+                          <p>
+                            Ad lorem aliquid laoreet pri, possim iiqsue ad vim.
+                            Consectetur dolores et laborum quia. Ab commodi,
+                            consectetur dolorem eveniet iusto officiis quam
+                            quibusdam reprehenderit.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="swiper-img-short">
+                        <div class="swiper-img">
+                          <img src="./images/editors/img2.jpg" alt="img" />
+                        </div>
+                        <div class="swiper-img">
+                          <img src="./images/editors/img3.jpg" alt="img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-content-img">
+                      <div class="swiper-img-long">
+                        <img src="./images/editors/img1.jpg" alt="img" />
+                        <div class="swiper-img-decoration">
+                          <h3>Flatiron</h3>
+                          <span>USA</span>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Consectetur dolores et laborum quia. Ab
+                            commodi, consectetur dolorem eveniet iusto officiis
+                            quam quibusdam reprehenderit.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="swiper-img-short">
+                        <div class="swiper-img">
+                          <img src="./images/editors/img2.jpg" alt="img" />
+                        </div>
+                        <div class="swiper-img">
+                          <img src="./images/editors/img3.jpg" alt="img" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-img-block">
+                      <div class="swiper-img">
+                        <img src="./images/editors/img4.jpg" alt="img" />
+                      </div>
+                      <div class="swiper-img">
+                        <img src="./images/editors/img5.jpg" alt="img" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="swiper-img-block">
+                      <div class="swiper-img">
+                        <img src="./images/editors/img4.jpg" alt="img" />
+                      </div>
+                      <div class="swiper-img">
+                        <img src="./images/editors/img5.jpg" alt="img" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="collection">
+        <div class="container">
+          <div class="collection_wrapper">
+            <h1 class="collection_title">Mountain Collections</h1>
+            <p>
+              See our best mountain collections, explore and Lorem impsum elit.
+              Consectetur dolores eligendi, ipsa magni molestias
+            </p>
+            <ul class="collection_list">
+              <li class="collection_item">
+                <div class="collection_content">
+                  <h3>Southern Mountain</h3>
+                  <span>South Country</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consectetur dolores eligendi, ipsa magni molestias, non
+                    nulla quas, quod soluta temporibus vel voluptas voluptates.
+                    Animi asperiores dicta impedit nam neque rem!
+                  </p>
+                  <p>
+                    Quod soluta temporibus vel voluptas voluptates. Animi
+                    asperiores dicta impedit nam neque rem!
+                  </p>
+                  <button class="button">Read More</button>
+                </div>
+                <div class="collection_img">
+                  <img src="./images/collection/img1.jpg" alt="img" />
+                </div>
+              </li>
+              <li class="collection_item">
+                <div class="collection_content">
+                  <h3>Norhern Mountain</h3>
+                  <span>North Country</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consectetur dolores eligendi, ipsa magni molestias, non
+                    nulla quas, quod soluta temporibus vel voluptas voluptates.
+                    Animi asperiores dicta impedit nam neque rem!
+                  </p>
+                  <p>
+                    Quod soluta temporibus vel voluptas voluptates. Animi
+                    asperiores dicta impedit nam neque rem!
+                  </p>
+                  <button class="button">Read More</button>
+                </div>
+                <div class="collection_img">
+                  <img src="./images/collection/img2.jpg" alt="img" />
+                </div>
+              </li>
+              <li class="collection_item">
+                <div class="collection_content">
+                  <h3>Eastern Mountain</h3>
+                  <span>East Country</span>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consectetur dolores eligendi, ipsa magni molestias, non
+                    nulla quas, quod soluta temporibus vel voluptas voluptates.
+                    Animi asperiores dicta impedit nam neque rem!
+                  </p>
+                  <p>
+                    Quod soluta temporibus vel voluptas voluptates. Animi
+                    asperiores dicta impedit nam neque rem!
+                  </p>
+                  <button class="button">Read More</button>
+                </div>
+                <div class="collection_img">
+                  <img src="./images/collection/img3.jpg" alt="img" />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="subscribe">
+        <div class="container">
+          <div class="subscribe_wrapper">
+            <h4 class="subscribe_title">Subscribe to our news letter</h4>
+            <form class="subscribe_form" action="">
+              <input type="email" placeholder="Your email" />
+              <button class="button" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="/" class="footer__logo">trppd</a>
+      <p class="footer__copyright">
+        &#169; <span class="footer__years">2017 - 2023</span>
+      </p>
+      <ul class="footer__links">
+        <li class="footer__link-item">
+          <a href="https://www.instagram.com/" class="footer__link">
+            <img
+              src="./images/icons/instagramm.png"
+              alt="instagram logo"
+              class="footer__link-img"
+            />
+          </a>
+        </li>
+        <li class="footer__link-item">
+          <a href="https://www.facebook.com/" class="footer__link">
+            <img
+              src="./images/icons/facebook.png"
+              alt="facebook logo"
+              class="footer__link-img"
+            />
+          </a>
+        </li>
+        <li class="footer__link-item">
+          <a href="https://twitter.com/" class="footer__link">
+            <img
+              src="./images/icons/twitter.png"
+              alt="twitter logo"
+              class="footer__link-img footer__link-img--twitter"
+            />
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
